@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration , OpenAIApi} from 'openai';
 
-const OPENAI_API_KEY="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"
+
 
 
 

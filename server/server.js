@@ -5,7 +5,7 @@ import { Configuration , OpenAIApi} from 'openai';
 
 
 
-
+OPENAI_API_KEY="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";
 
 dotenv.config();
 

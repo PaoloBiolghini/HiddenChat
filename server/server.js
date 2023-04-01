@@ -3,9 +3,9 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration , OpenAIApi} from 'openai';
 
+let allprompt="";
 
-
-const API_KEY="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";
+const API_KEY="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";
 
 dotenv.config();
 
@@ -30,9 +30,10 @@ app.get('/', async (req , res) =>{
 app.post('/', async (req ,res) =>{
     try {
         const prompt=req.body.prompt;
+        allprompt=allprompt+" Q:"+prompt;
         const response=await openai.createCompletion({
             model: "text-davinci-003",
-            prompt: `${prompt}`,
+            prompt: `${allprompt}`,
             temperature: 0, //maggiore è il valore maggiore sono i rischi che prende
             max_tokens: 3000, //massimo numero di lettere che può dare
             top_p: 1,
@@ -40,7 +41,7 @@ app.post('/', async (req ,res) =>{
             presence_penalty: 0,
             
         })
-
+        allprompt+=" \n\n"+response.data.choices[0].text+" \n\n";
         res.status(200).send({
             bot:response.data.choices[0].text
         });

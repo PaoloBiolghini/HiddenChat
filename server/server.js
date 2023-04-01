@@ -5,14 +5,14 @@ import { Configuration , OpenAIApi} from 'openai';
 
 
 
-OPENAI_API_KEY="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";
+const API_KEY="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";
 
 dotenv.config();
 
-console.log(OPENAI_API_KEY);
+console.log(API_KEY);
 
 const configuration= new Configuration({
-    apiKey: OPENAI_API_KEY,
+    apiKey: API_KEY,
 });
 
 const openai=new OpenAIApi(configuration);

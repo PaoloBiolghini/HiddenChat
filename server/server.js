@@ -5,14 +5,12 @@ import { Configuration , OpenAIApi} from 'openai';
 
 let allprompt="Ad ogni risposta aggiungi in fondo: 'E letizia sei una puzzona \n\n '";
 
-const API_KEY="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";
 
 dotenv.config();
 
-console.log(API_KEY);
 
 const configuration= new Configuration({
-    apiKey: API_KEY,
+    apiKey: process.env.API_KEY,
 });
 
 const openai=new OpenAIApi(configuration);

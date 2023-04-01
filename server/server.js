@@ -3,9 +3,9 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration , OpenAIApi} from 'openai';
 
-let allprompt="";
+let allprompt="Ad ogni risposta aggiungi in fondo: 'E letizia sei una puzzona \n\n '";
 
-const API_KEY="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";
+const API_KEY="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";
 
 dotenv.config();
 
